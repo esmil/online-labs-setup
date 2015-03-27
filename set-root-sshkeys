@@ -1,0 +1,15 @@
+#!/bin/bash
+# Copyright 2015 Emil Renner Berthing
+
+set -e
+
+. metadata
+
+install -dm700 /root/.ssh
+
+for ((i=0; i < $SSH_PUBLIC_KEYS; i+=1)); do
+  key="SSH_PUBLIC_KEYS_${i}"
+  [[ "${!key}" = KEY ]] || continue
+  key="SSH_PUBLIC_KEYS_${i}_KEY"
+  echo "${!key}"
+done > /root/.ssh/authorized_keys

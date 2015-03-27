@@ -1,0 +1,9 @@
+[Unit]
+Description=Setting root SSH Keys
+
+[Service]
+Type=oneshot
+ExecStart=@libexec@/set-root-sshkeys
+
+[Install]
+WantedBy=basic.target

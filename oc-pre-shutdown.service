@@ -1,0 +1,11 @@
+[Unit]
+Description=Preparing Shutdown
+DefaultDependencies=no
+Before=shutdown.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/install -Dm755 @libexec@/shutdown /run/initramfs/shutdown
+
+[Install]
+WantedBy=shutdown.target

@@ -1,0 +1,6 @@
+# Copyright 2015 Emil Renner Berthing
+
+cachefile='/run/oc-metadata.cache'
+
+[[ -f "$cachefile" ]] || curl -so "$cachefile" 'http://169.254.42.42/conf'
+. "$cachefile"

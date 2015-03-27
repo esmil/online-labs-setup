@@ -1,0 +1,12 @@
+enable systemd-timesyncd.*
+enable systemd-networkd.*
+enable systemd-resolved.*
+
+disable getty@.service
+disable machines.target
+disable remote-fs.target
+disable crond.service
+
+enable oc-pre-shutdown.service
+enable oc-set-root-sshkeys.service
+enable oc-sync-kernel-modules.service
