@@ -23,9 +23,9 @@ Description=xNBD client for /dev/nbd$i
 
 [Service]
 Type=forking
-ExecStart=/usr/sbin/xnbd-client --blocksize 4096 --connect /dev/nbd$i $addr $port
+ExecStart=/run/sbin/xnbd-client --blocksize 4096 --connect /dev/nbd$i $addr $port
 ExecStartPost=/usr/sbin/udevadm trigger /dev/nbd$i
-ExecStop=/usr/sbin/xnbd-client --disconnect /dev/nbd$i
+ExecStop=/run/sbin/xnbd-client --disconnect /dev/nbd$i
 EOF
   mkdir -m755 "$1/dev-nbd${i}.device.requires"
   ln -s "../xnbd-client-nbd${i}.service" "$1/dev-nbd${i}.device.requires/xnbd-client-nbd${i}.service"

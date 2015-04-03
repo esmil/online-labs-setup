@@ -8,7 +8,7 @@ URL:            https://github.com/esmil/online-labs-setup
 Source0:        https://github.com/esmil/online-labs-setup/archive/master.tar.gz
 
 BuildRequires:  glibc-static
-Requires:       systemd xnbd-client curl wget
+Requires:       systemd curl wget
 
 %description
 Automatic configuration of online-labs servers
